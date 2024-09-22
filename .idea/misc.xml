@@ -8,6 +8,12 @@
         <option value="$PROJECT_DIR$/ms-eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/ms-api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/ms-auth-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-student-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-advisor-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-payment-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-notification-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-reporting-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-thesis-service/pom.xml" />
       </list>
     </option>
   </component>

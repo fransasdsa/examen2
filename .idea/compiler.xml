@@ -9,16 +9,28 @@
         <module name="ms-config-server" />
         <module name="ms-eureka-server" />
         <module name="ms-api-gateway" />
+        <module name="ms-thesis-service" />
+        <module name="ms-student-service" />
+        <module name="ms-reporting-service" />
+        <module name="ms-payment-service" />
+        <module name="ms-notification-service" />
         <module name="ms-auth-service" />
+        <module name="ms-advisor-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ms-advisor-service" options="-parameters" />
       <module name="ms-api-gateway" options="-parameters" />
       <module name="ms-auth-service" options="-parameters" />
       <module name="ms-config-server" options="-parameters" />
       <module name="ms-eureka-server" options="-parameters" />
+      <module name="ms-notification-service" options="-parameters" />
+      <module name="ms-payment-service" options="-parameters" />
+      <module name="ms-reporting-service" options="-parameters" />
+      <module name="ms-student-service" options="-parameters" />
+      <module name="ms-thesis-service" options="-parameters" />
     </option>
   </component>
 </project>

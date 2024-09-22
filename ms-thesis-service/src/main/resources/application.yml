@@ -1,13 +1,15 @@
+# Archivo: src/main/resources/application.yml
 server:
-  port: 8081
+  port: 8087
 
 spring:
   application:
-    name: ms-auth-service
-  config:
-    import: "optional:configserver:http://localhost:8888"
+    name: ms-thesis-service
+  cloud:
+    config:
+      uri: http://localhost:8888
   datasource:
-    url: jdbc:mysql://localhost:3306/ms-auth-service
+    url: jdbc:mysql://localhost:3306/ms-thesis-service
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -20,11 +22,15 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-  instance:
-    prefer-ip-address: true
+    instance:
+      prefer-ip-address: true
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+jwt:
+  secret: your_jwt_secret_key
+  expiration: 3600000 # 1 hora en milisegundos
