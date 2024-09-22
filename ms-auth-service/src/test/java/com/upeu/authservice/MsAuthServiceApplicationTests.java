@@ -1,10 +1,10 @@
-package com.upeu.configserver;
+package com.upeu.authservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MsConfigServerApplicationTests {
+class MsAuthServiceApplicationTests {
 
     @Test
     void contextLoads() {

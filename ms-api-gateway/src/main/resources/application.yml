@@ -1,0 +1,73 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
+  application:
+    name: ms-api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: lb://ms-auth-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+        - id: student-service
+          uri: lb://ms-student-service
+          predicates:
+            - Path=/students/**
+          filters:
+            - StripPrefix=1
+        - id: advisor-service
+          uri: lb://ms-advisor-service
+          predicates:
+            - Path=/advisors/**
+          filters:
+            - StripPrefix=1
+        - id: payment-service
+          uri: lb://ms-payment-service
+          predicates:
+            - Path=/payments/**
+          filters:
+            - StripPrefix=1
+        - id: notification-service
+          uri: lb://ms-notification-service
+          predicates:
+            - Path=/notifications/**
+          filters:
+            - StripPrefix=1
+        - id: reporting-service
+          uri: lb://ms-reporting-service
+          predicates:
+            - Path=/reports/**
+          filters:
+            - StripPrefix=1
+
+    security:
+      oauth2:
+        resourceserver:
+          jwt:
+            jwk-set-uri: http://localhost:8888/.well-known/jwks.json
+
+  profiles:
+    active: default
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    org.springframework.security: DEBUG
